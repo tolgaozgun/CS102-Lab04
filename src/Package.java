@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author Tolga Ozgun
+ * @version 1.3, 07/03/2021
+ *
+ */
 public class Package extends Delivery{
 
 	Item packedItem;
@@ -8,6 +13,10 @@ public class Package extends Delivery{
 		packedItem = content;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public double getWeight() {
 		return packedItem.getWeight();
 	}

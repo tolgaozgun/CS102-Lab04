@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * 
+ * @author Tolga Ozgun
+ * @version 1.3, 07/03/2021
+ *
+ */
 public class Company implements Locatable {
 
 	final int EMPLOYEE_CAPACITY = 15;

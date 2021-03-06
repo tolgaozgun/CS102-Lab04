@@ -1,4 +1,9 @@
-
+/**
+ * 
+ * @author Tolga Ozgun
+ * @version 1.3, 07/03/2021
+ *
+ */
 public class Mail extends Delivery {
 
 	String content;
@@ -9,10 +14,21 @@ public class Mail extends Delivery {
 		this.content = content;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	public double getWeight() {
 		return 0.1;
 	}
+	
+	//TODO: Check here
 
+	/**
+	 * {@inheritDoc}
+	 * Also prints out the weight of current mail.
+	 * @return String representation of this mail.
+	 */
 	@Override
 	public String toString() {
 		return super.toString() + " weight: " + getWeight();
