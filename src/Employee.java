@@ -13,6 +13,7 @@ public class Employee extends Person {
 		super( name );
 		this.employeeNo = employeeNo;
 		currentJobs = 0;
+		deliveries = new Delivery[5];
 	}
 
 	public void adjustSalary( double value ) {
@@ -20,23 +21,30 @@ public class Employee extends Person {
 	}
 
 	public boolean getAvailability() {
-		return available;
+		//TODO: Add available???
+		return currentJobs < MAX_JOBS;
 	}
 
 	public void addJob( Item sendItem, Customer sender, Customer receiver,
 			int packageNo ) {
-
+		if( getAvailability() ) {
+			
+		}
 	}
 
 	public void deliverPackages() {
 		for( Delivery delivery: deliveries ) {
-			if( delivery.getSender() == null || delivery.getReceiver() == null ) {
-				System.out.println( "Failed to deliver!" );
+			if( delivery != null ) {
+				if( delivery.getSender() == null || delivery.getReceiver() == null ) {
+					System.out.println( "Failed to deliver!" );
+				}
+				System.out.println( "Delivery No: " + delivery.getPackageNo() );
+				System.out.println( "Delivery Sender: " + delivery.getSender() );
+				System.out.println( "Delivery Receiver: " + delivery.getReceiver() );
 			}
-			System.out.println( "Delivery No: " + delivery.getPackageNo() );
-			System.out.println( "Delivery Sender: " + delivery.getSender() );
-			System.out.println( "Delivery Receiver: " + delivery.getReceiver() );
 		}
+		deliveries = new Delivery[5];
+		currentJobs = 0;
 	}
 
 	@Override
