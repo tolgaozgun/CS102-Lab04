@@ -15,6 +15,10 @@ public class Company implements Locatable {
 	public Company( int posX, int posY ) {
 		this.posX = posX;
 		this.posY = posY;
+		employees = new Employee[ 15 ];
+		customers = new ArrayList<Customer>();
+		numOfEmployees = 0;
+		packageNo = 0;
 	}
 
 	@Override
@@ -34,36 +38,58 @@ public class Company implements Locatable {
 	}
 
 	public boolean addEmployee( Employee candidate ) {
-		return true;
+		if ( numOfEmployees < EMPLOYEE_CAPACITY ) {
+			employees[ numOfEmployees ] = candidate;
+			numOfEmployees++;
+			return true;
+		}
+		return false;
 	}
 
 	public void addCustomer( Customer customer ) {
-
+		customers.add( customer );
 	}
 
 	public boolean terminateContract( int employeeIndex ) {
-		return true;
+		if ( numOfEmployees > employeeIndex ) {
+			
+			while( numOfEmployees > employeeIndex + 1 ) {
+				employees[employeeIndex] = employees[employeeIndex + 1];
+				employeeIndex++;
+			}
+			employees[employeeIndex] = null;
+			numOfEmployees--;
+			return true;
+		}
+		return false;
 	}
 
-	public Item createDeliverable( Item sendItem, Customer sender,
+	public boolean createDeliverable( Item sendItem, Customer sender,
 			Customer receiver ) {
 		for ( Employee employee : employees ) {
 			if ( employee.getAvailability() ) {
-
+				employee.addJob( sendItem, sender, receiver, packageNo );
+				packageNo++;
+				return true;
 			}
 		}
-		return null;
+		return false;
 	}
 
 	public void deliverPackages() {
-
+		for( Employee employee: employees ) {
+			if( employee != null ) {
+				employee.deliverPackages();
+			}
+		}
 	}
 
 	@Override
 	public String toString() {
 		return "Number of Employees: " + numOfEmployees + " Customers: " // +
-																			// TODO:
-				+ " Employees: " + Arrays.toString( employees ) + " X: " + posX
+				// TODO:
+				+ " Employees: " + Arrays.toString( employees ) 
+				+ " X: " + posX
 				+ " Y: " + posY;
 	}
 }

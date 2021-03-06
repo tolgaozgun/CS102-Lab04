@@ -27,7 +27,7 @@ public abstract class Delivery {
 	
 	@Override
 	public String toString() {
-		return getClass() + " package no: " + packageNo + " sender: " + sender + " receiver: " + receiver;
+		return getClass() + " Package no: " + packageNo + " Sender: " + sender + " Receiver: " + receiver;
 	}
 	
 }

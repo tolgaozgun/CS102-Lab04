@@ -43,6 +43,6 @@ public abstract class Person implements Locatable {
 	
 	@Override
 	public String toString() {
-		return "Name: " + name + " x: " + posX + " y: " + posY;
+		return getClass() + " Name: " + name + " X: " + posX + " Y: " + posY;
 	}
 }

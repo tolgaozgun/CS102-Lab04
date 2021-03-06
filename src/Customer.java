@@ -19,14 +19,12 @@ public class Customer extends Person {
 		if( currentItem != null ) {
 			item = currentItem;
 		}
-		
-		return true;
-		
+		return company.createDeliverable( item, this, receiver );		
 	}
 	
 	@Override
 	public String toString() {
-		return this.name;
+		return super.toString() + " item: " + currentItem;
 	}
 
 }
