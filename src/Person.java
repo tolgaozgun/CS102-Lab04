@@ -1,7 +1,7 @@
 /**
  * 
  * @author Tolga Ozgun
- * @version 1.3, 07/03/2021
+ * @version 1.4, 07/03/2021
  *
  */
 public abstract class Person implements Locatable {
@@ -12,6 +12,7 @@ public abstract class Person implements Locatable {
 
 	/**
 	 * Constructor of Person class with name, x and y value.
+	 * 
 	 * @param name The name of this person as String
 	 * @param posX The integer value of this person's x.
 	 * @param posY The integer value of this person's y.
@@ -24,6 +25,7 @@ public abstract class Person implements Locatable {
 
 	/**
 	 * Constructor of Person class with only name.
+	 * 
 	 * @param name The name of this person as String
 	 */
 	public Person( String name ) {
@@ -34,6 +36,7 @@ public abstract class Person implements Locatable {
 
 	/**
 	 * Returns this person's name.
+	 * 
 	 * @return String value of name
 	 */
 	public String getName() {
@@ -42,6 +45,7 @@ public abstract class Person implements Locatable {
 
 	/**
 	 * Sets this person's name to specified parameter
+	 * 
 	 * @param name String value of name
 	 */
 	public void setName( String name ) {
@@ -72,9 +76,10 @@ public abstract class Person implements Locatable {
 		this.posX = posX;
 		this.posY = posY;
 	}
-	
+
 	/**
 	 * Overridden toString method with more information about the person.
+	 * 
 	 * @return String representation of this object
 	 */
 	@Override

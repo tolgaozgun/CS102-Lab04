@@ -3,7 +3,7 @@
  * Locatable interface is inherited by classes which implement positions.
  * 
  * @author Tolga Ozgun
- * @version 1.3, 07/03/2021
+ * @version 1.4, 07/03/2021
  *
  */
 
@@ -11,18 +11,21 @@ public interface Locatable {
 
 	/**
 	 * Returns the x position of the current object.
+	 * 
 	 * @return Integer x value
 	 */
 	int getX();
-	
+
 	/**
 	 * Returns the y position of the current object.
+	 * 
 	 * @return Integer y value
 	 */
 	int getY();
 
 	/**
 	 * Sets the current position.
+	 * 
 	 * @param posX Integer value of new x
 	 * @param posY Integer value of new y
 	 */
