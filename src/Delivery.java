@@ -1,7 +1,14 @@
 /**
+ * Delivery is an abstract class which carries properties for package no and
+ * Customers for receiver and sender. Subclasses of this class can be delivered
+ * via Company deliveries.
+ * 
+ * @see Mail
+ * @see Package
+ * @see Company
  * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public abstract class Delivery {
@@ -64,8 +71,8 @@ public abstract class Delivery {
 	 */
 	@Override
 	public String toString() {
-		return getClass() + " Package no: " + packageNo + " Sender: " + sender
-				+ " Receiver: " + receiver;
+		return "[" + getClass().getName() + "] with package no: " + packageNo
+				+ " sender: " + sender + " receiver: " + receiver;
 	}
 
 }

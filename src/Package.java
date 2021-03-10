@@ -1,7 +1,10 @@
 /**
+ * Package is a subclass of Delivery class, which implements an Item type of
+ * content.
  * 
+ * @see Delivery
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public class Package extends Delivery {

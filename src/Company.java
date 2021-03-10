@@ -3,8 +3,17 @@ import java.util.Arrays;
 
 /**
  * 
+ * Company is a class that holds Customer's, Employee's, Delivery's and also
+ * implements Locatable interface. A Company can make its employees deliver
+ * deliveries, fire and hire employees, and gain customers.
+ * 
+ * @see Customer
+ * @see Employee
+ * @see Delivery
+ * @see Locatable
+ * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public class Company implements Locatable {
@@ -27,7 +36,7 @@ public class Company implements Locatable {
 	public Company( int posX, int posY ) {
 		this.posX = posX;
 		this.posY = posY;
-		employees = new Employee[ 15 ];
+		employees = new Employee[ EMPLOYEE_CAPACITY ];
 		customers = new ArrayList<Customer>();
 		numOfEmployees = 0;
 		packageNo = 0;
@@ -113,11 +122,15 @@ public class Company implements Locatable {
 	 */
 	public boolean createDeliverable( Item sendItem, Customer sender,
 			Customer receiver ) {
-		for ( Employee employee : employees ) {
-			if ( employee.getAvailability() ) {
-				employee.addJob( sendItem, sender, receiver, packageNo );
-				packageNo++;
-				return true;
+		Employee employee;
+		for ( int i = 0; i < EMPLOYEE_CAPACITY; i++ ) {
+			if ( employees[ i ] != null ) {
+				employee = employees[ i ];
+				if ( employee.getAvailability() ) {
+					employee.addJob( sendItem, sender, receiver, packageNo );
+					packageNo++;
+					return true;
+				}
 			}
 		}
 		return false;
@@ -145,8 +158,8 @@ public class Company implements Locatable {
 	 */
 	@Override
 	public String toString() {
-		return "Number of Employees: " + numOfEmployees + " Customers: " // +
-		// TODO:
+		return "[" + getClass().getName() + "] Number of Employees: "
+				+ numOfEmployees + " Customers: " + customers.toString()
 				+ " Employees: " + Arrays.toString( employees ) + " X: " + posX
 				+ " Y: " + posY;
 	}

@@ -1,7 +1,9 @@
 /**
+ * Item is a class that accepts weight and content values. This item is an item
+ * that can be delivered by the delivery companies.
  * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public class Item {
@@ -43,6 +45,7 @@ public class Item {
 	 */
 	@Override
 	public String toString() {
-		return getClass() + " weight: " + weight + " content: " + content;
+		return "[" + getClass().getName() + "] with weight: " + weight
+				+ " and content: " + content;
 	}
 }

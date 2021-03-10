@@ -1,7 +1,10 @@
 /**
+ * Mail is a subclass of Delivery class, which implements a String type of
+ * content.
  * 
+ * @see Delivery
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public class Mail extends Delivery {
@@ -30,8 +33,6 @@ public class Mail extends Delivery {
 	public double getWeight() {
 		return 0.1;
 	}
-
-	// TODO: Check here
 
 	/**
 	 * {@inheritDoc} Also prints out the weight of current mail.

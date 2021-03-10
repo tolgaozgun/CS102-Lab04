@@ -1,7 +1,14 @@
 /**
  * 
+ * Customer is a subclass of Person class which can hold and send an item. Also
+ * this Customer object can be used as a sender or a receiver for Company
+ * deliveries.
+ * 
+ * @see Company
+ * @see Delivery
+ * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public class Customer extends Person {

@@ -1,9 +1,17 @@
 import java.util.Arrays;
 
 /**
+ * Employee class is a subclass of Person class which implements following
+ * properties: salary, delivery, employee no. This person can deliver deliveries
+ * between Customer objects and can work for a Company.
+ * 
+ * @see Customer
+ * @see Person
+ * @see Delivery
+ * @see Company
  * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 
@@ -14,7 +22,6 @@ public class Employee extends Person {
 	Delivery[] deliveries;
 	double salary;
 	int employeeNo;
-	boolean available;
 
 	/**
 	 * Default constructor that accepts employee no and name
@@ -39,13 +46,21 @@ public class Employee extends Person {
 	}
 
 	/**
+	 * Returns the salary of this employee
+	 * 
+	 * @return Double value of salary
+	 */
+	public double getSalary() {
+		return salary;
+	}
+
+	/**
 	 * Checks if the current employee is available. Hence, can accept an another
 	 * job.
 	 * 
 	 * @return Boolean value of availability.
 	 */
 	public boolean getAvailability() {
-		// TODO: Add boolean available???
 		return currentJobs < MAX_JOBS;
 	}
 
@@ -107,9 +122,9 @@ public class Employee extends Person {
 	@Override
 	public String toString() {
 		return super.toString() + " Employee No: " + employeeNo + " Salary: "
-				+ salary + " Is Available: " + available + " Deliveries: "
-				+ Arrays.toString( deliveries ) + " Current Jobs: "
-				+ currentJobs;
+				+ salary + " Is Available: " + getAvailability()
+				+ " Deliveries: " + Arrays.toString( deliveries )
+				+ " Current Jobs: " + currentJobs;
 	}
 
 }

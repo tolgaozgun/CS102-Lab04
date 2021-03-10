@@ -3,7 +3,7 @@
  * Locatable interface is inherited by classes which implement positions.
  * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 

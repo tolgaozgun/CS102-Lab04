@@ -1,7 +1,9 @@
 /**
+ * Person is an abstract class that has methods for objects with names and
+ * locations.
  * 
  * @author Tolga Ozgun
- * @version 1.4, 07/03/2021
+ * @version 1.5, 10/03/2021
  *
  */
 public abstract class Person implements Locatable {
@@ -84,6 +86,7 @@ public abstract class Person implements Locatable {
 	 */
 	@Override
 	public String toString() {
-		return getClass() + " Name: " + name + " X: " + posX + " Y: " + posY;
+		return "[" + getClass().getName() + "] with name: " + name + " X: "
+				+ posX + " Y: " + posY;
 	}
 }
